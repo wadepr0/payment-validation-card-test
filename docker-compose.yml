@@ -1,0 +1,9 @@
+services:
+  app_front:
+    build: ./client/.
+    ports:
+      - "3000:4173"
+  app:
+    build: ./server/.
+    ports:
+      - "2050:2050"
