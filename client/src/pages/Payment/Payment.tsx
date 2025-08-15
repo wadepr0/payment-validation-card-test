@@ -13,7 +13,7 @@ import { defaultValues } from "../../shared/validation/schema/defaultValues";
 const Payment = () => {
   const {
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
     reset,
     control,
   } = useForm<IPaymentSchema>({
@@ -173,7 +173,7 @@ const Payment = () => {
 
       <div className="w-full flex justify-end">
         <button
-          disabled={!!Object.values(errors).length}
+          disabled={!isValid}
           type="submit"
           className="bg-primary hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-lg text-sm transition-colors duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300 disabled:opacity-50 disabled:cursor-not-allowed w-28 flex justify-center items-center h-10"
         >
